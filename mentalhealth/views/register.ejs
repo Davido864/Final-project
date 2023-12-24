@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= forumName %> - Register</title>
+  <link rel="stylesheet" type="text/css"  href="register.css" />
+</head>
+<body>
+  <div class="container">
+    <a href="login.ejs" class="back-button">←</a>
+    <h1><%= forumName %></h1>
+    <form action="/register" method="post">
+      <input type="text" name="fullName" id="fullName" placeholder="Enter Full name" required>
+      <input type="text" name="username" id="username" placeholder="Enter Username" required>
+      <input type="password" name="password" id="password" placeholder="Enter password" required>
+      <input type="number" name="age" id="age" placeholder="Enter age" required>
+      <button type="submit" id="joinButton">Join</button>
+    </form>
+    <a href="/" class="back-button">&larr;</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

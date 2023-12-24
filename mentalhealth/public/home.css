@@ -1,0 +1,22 @@
+/* home.css - Style for home page */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ff7f7f, #fafafa);
+  }
+  
+ .background image {
+
+  background-image: url('/public/images/image 1.png');
+
+  background-size: cover;
+
+  background-position: center;
+
+
+}
