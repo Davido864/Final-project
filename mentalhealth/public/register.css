@@ -1,3 +1,24 @@
+/* The provided CSS styles a web form with a modern and clean design, focusing on user accessibility 
+and visual appeal. */
+
+/* The entire page is styled with a full-height layout, zero margin, Arial font, and a linear gradient 
+background ranging from light red to off-white. */
+
+/* The form is enclosed within a 300px wide container, centrally positioned using Flexbox, and 
+adorned with a white background, rounded corners, and a subtle box shadow for depth.*/
+
+/* A back button is styled for easy navigation, placed at the top-left corner of the container 
+with a larger font size and removed text decoration. */
+
+/* The heading (h1) is centrally aligned with a black color and a margin for spacing. */
+
+/* Input fields (text, password, number) are designed to span the full width of the container 
+with comfortable padding, a light gray border, and rounded corners */
+
+/* Buttons are styled to be eye-catching and interactive, with a full-width layout, inviting red 
+background, white text, rounded corners, and a pointer cursor on hover, creating an intuitive 
+and user-friendly form interface.*/
+
 body, html {
     height: 100%;
     margin: 0;
@@ -53,4 +74,3 @@ body, html {
     cursor: pointer;
     margin-top: 10px;
   }
-  
