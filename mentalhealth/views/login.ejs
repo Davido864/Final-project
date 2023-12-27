@@ -1,3 +1,9 @@
+<!-- This EJS template generates the login page for the application, 
+displaying the forum name dynamically and providing a form for users to enter their login credentials. -->
+
+<!-- It also includes navigation for new user registration and password recovery,along with 
+client-side scripting for enhanced interactivity. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +21,6 @@
       <input type="checkbox" id="remember_me" name="remember_me"> Remember me
     </label>
     <button id="loginButton" onclick="window.location.href='/home'">Login</button>
-    <!-- Insert the new Register button here -->
     <button id="registerButton" onclick="window.location.href='/register'">Register</button>
     <p><a href="/forgot-password">Forgotten password</a></p>
   </form>
@@ -23,4 +28,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
