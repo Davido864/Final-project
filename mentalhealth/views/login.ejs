@@ -5,26 +5,49 @@ displaying the forum name dynamically and providing a form for users to enter th
 client-side scripting for enhanced interactivity. -->
 
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <title><%= forumName %> - Login</title>
+
   <link rel="stylesheet" type="text/css" href="login.css" />
+
 </head>
+
 <body>
+
   <div class="container">
+
   <h1><%= forumName %></h1>
+
   <form action="/login" method="post">
-    <input type="text" id="username" name="username" placeholder="Username" required>
-    <input type="password" id="password" name="password" placeholder="Password" required>
+
+    <input type="text" id="username" name="username" value="" placeholder="Username" required>
+
+    <input type="password" id="password" name="password" value="" placeholder="Password" required >
+
     <label>
-      <input type="checkbox" id="remember_me" name="remember_me"> Remember me
+
+      <input type="checkbox" id="remember_me" name="remember_me" value=""> Remember me
+
     </label>
-    <button id="loginButton" onclick="window.location.href='/home'">Login</button>
+
+    <button type="submit" id="loginButton" value="login">Login</button>
+
     <button id="registerButton" onclick="window.location.href='/register'">Register</button>
+
     <p><a href="/forgot-password">Forgotten password</a></p>
+
   </form>
+
 </div>
+
 <script src="script.js"></script>
+
 </body>
+
 </html>
