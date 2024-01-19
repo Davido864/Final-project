@@ -1,36 +1,53 @@
-// Route handler for forum web app
 module.exports = function(app, forumData) {
-
-    // Handle our routes
-
     // Login page
     app.get('/', function(req, res) {
         res.render('login.ejs', forumData);
     });
 
-// Register page
+    // Handle login logic
+    app.post('/', function(req, res) {
+        const { username, password } = req.body;
+        const query = 'SELECT password FROM users WHERE username = ?';
+    
+        db.query(query, [username], function(err, results) {
+            if (err) {
+                console.error('Database error:', err);
+                res.redirect('/login?error=Database+error');
+            } else if (results.length > 0 && password === results[0].password) {
+                // If you have session management set up
+                req.session.loggedin = true;
+                req.session.username = username;
+                res.redirect('/home');
+            } else {
+                res.redirect('/');
+            }
+        });
+    });
+    
+    // Register page
 app.get('/register', function(req, res) {
-    res.render('register.ejs', forumData); // pass the necessary data to your register template
+    res.render('register.ejs', forumData);
 });
 
+// Handle registration logic
 app.post('/register', function(req, res) {
-    // Handle registration logic here
-    // After successful registration, redirect to the login page
-    res.redirect('/');
+    const { username, password, fullName, age } = req.body;
+    let sqlquery = `INSERT INTO users (username, password, fullName, age) VALUES (?, ?, ?, ?)`;
+    db.query(sqlquery, [username, password, fullName, age], function(err, result) {
+        if (err) {
+            res.render('register.ejs', { error: "Error in registration" });
+        } else {
+            res.redirect('/');
+        }
+    });
 });
 
 // Home page
-// Assuming you have a file main.js for your route handlers
-
-// ... your existing requires and app setup
-
-// Home page route handler
 app.get('/home', function(req, res) {
     res.render('home.ejs');
-  });
-  
-  // ... rest of your route handlers
-  
+});
+
+// ... rest of your route handlers
 
 };
 
