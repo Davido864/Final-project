@@ -1,5 +1,3 @@
-<!-- This EJS template is designed for the registration page of the application.-->
-
 <!-- It dynamically displays the forum name in the title and heading, and offers a form for new users 
 to register their details, including full name, username, password, and age. --> 
 
@@ -10,28 +8,49 @@ register.css, sends data to the /register route for processing. -->
 <!-- Two back-navigation options are provided: one as a textual link and the other as a symbolic 
 arrow, enhancing user experience and accessibility.-->
 
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <title><%= forumName %> - Register</title>
+
   <link rel="stylesheet" type="text/css"  href="register.css" />
+
 </head>
+
 <body>
+
   <div class="container">
+
     <a href="login.ejs" class="back-button">←</a>
+
     <h1><%= forumName %></h1>
-    <form action="/register" method="post">
-      <input type="text" name="fullName" id="fullName" placeholder="Enter Full name" required>
-      <input type="text" name="username" id="username" placeholder="Enter Username" required>
-      <input type="password" name="password" id="password" placeholder="Enter password" required>
+
+      <form action="/register" method="post">
+
+      <input type="text" name="fullName" id="fullName" value="" placeholder="Enter Full name" required>
+
+      <input type="text" name="username" id="username" value="" placeholder="Enter Username" required>
+
+      <input type="password" name="password" id="password" value="" placeholder="Enter password" required>
+
       <input type="number" name="age" id="age" placeholder="Enter age" required>
-      <button type="submit" id="joinButton">Join</button>
+
+      <button type="submit" id="joinButton" value="register">Join</button>
+
     </form>
+
     <a href="/" class="back-button">&larr;</a>
+
   </div>
 
   <script src="script.js"></script>
-</body>
-</html>
 
+</body>
+
+</html>
