@@ -47,7 +47,11 @@ app.get('/home', function(req, res) {
     res.render('home.ejs');
 });
 
+// About you page
+app.get('/aboutyou', function(req, res) {
+    res.render('aboutyou.ejs');
+});
+
 // ... rest of your route handlers
 
 };
-
