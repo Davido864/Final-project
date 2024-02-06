@@ -52,6 +52,21 @@ app.get('/aboutyou', function(req, res) {
     res.render('aboutyou.ejs');
 });
 
+// Quiz page
+app.get('/quiz', function(req, res) {
+    res.render('quiz.ejs');
+});
+
+//Flashcards page
+app.get('/flashcard', function(req, res) {
+    res.render('flashcard.ejs');
+});
+
+// Feedback page
+app.get('/feedback', function(req, res) {
+    res.render('feedback.ejs');
+});
+
 // ... rest of your route handlers
 
 };
