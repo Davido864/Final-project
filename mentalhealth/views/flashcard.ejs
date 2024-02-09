@@ -1,0 +1,88 @@
+<!--This ejs template like the quiz template will allow you to select a topic based on the excercises 
+and technigues of mental health and wellbeing.-->
+
+<!--The user can set the difficulty of topic terms  and decide on how many sets of flashcards they 
+want.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="quiz.css"/>
+  </head>
+  <body>
+    <div class="container">
+
+
+     <img style="width: 100%; height: 100%; mix-blend-mode: darken" />
+
+
+     <a href="/home">  <img style="width: 49px; height: 52px; left: 20px; top: 20px; position: absolute; mix-blend-mode: darken" src="/images/image 12.png" /> </a>
+
+
+     <a href="/feedback"> <img style="width: 49px; height: 52px; left: 359px; top: 20px; position: absolute; mix-blend-mode: darken" src="/images/image 8.png" /> </a>
+
+
+     <div style="left: 115px; top: 110px; position: absolute; text-align: center; color: black; font-size: 32px; font-family: Inter; font-weight: 400; word-wrap: break-word">Flashcard Menu</div>
+
+
+     <select class="select-tailor" id="selector">
+
+      <option value="topic1">Mental health</option>
+
+      <option value="topic2">Wellbeing</option>
+
+      <option value="topic3">Meditation</option>
+
+      <option value="topic4">Relaxation</option>
+
+      <option value="topic5">Physical Disabilities</option>
+
+      <option value="topic6">Mental Disabilities</option>
+
+      <option value="topic7">Bullying</option>
+
+    </select>
+
+
+    <select class="selector-tailor" id="selector"> 
+
+      <option value="option1">Easy</option>
+
+      <option value="option2">Intermediary</option>
+
+      <option value="option3">Difficult</option>
+
+    </select>
+
+
+    <select class="select-tailoring" id="selector"> 
+
+      <option value="option1">5</option>
+
+      <option value="option2">10</option>
+
+      <option value="option3">15</option>
+
+      <option value="option4">20</option>
+
+    </select>
+
+
+     <div style="left: 215px; top: 255px; position: absolute; text-align: center; color: black; font-size: 26px; font-family: Inter; font-weight: 400; word-wrap: break-word">Select a topic</div>
+
+
+     <div style="left: 190px; top: 457px; position: absolute; text-align: center; color: black; font-size: 26px; font-family: Inter; font-weight: 400; word-wrap: break-word">Select difficulty</div>
+
+
+     <div style="left: 175px; top: 655px; position: absolute; text-align: center; color: black; font-size: 26px; font-family: Inter; font-weight: 400; word-wrap: break-word">Sets of flashcards</div>
+
+     <button class="button-tailoring">Genarate Quiz</button>
+
+     <button class="button-tailor">View Tailored Content</button>
+
+</div>
+
+</body>
+
+</html>
