@@ -67,6 +67,16 @@ app.get('/feedback', function(req, res) {
     res.render('feedback.ejs');
 });
 
+// Guide page
+app.get('/guide', function(req, res) {
+    res.render('guide.ejs');
+});
+
+// In depth guide page
+app.get('/indepthguide', function(req, res) {
+    res.render('indepthguide.ejs');
+});
+
 // ... rest of your route handlers
 
 };
