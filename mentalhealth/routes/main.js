@@ -140,6 +140,11 @@ app.get('/article4', function(req, res) {
     res.render('article4.ejs');
 });
 
+// support page
+app.get('/support', function(req, res) {
+    res.render('support.ejs');
+});
+
 // ... rest of your route handlers
 
 };
