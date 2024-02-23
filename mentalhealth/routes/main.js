@@ -77,6 +77,69 @@ app.get('/indepthguide', function(req, res) {
     res.render('indepthguide.ejs');
 });
 
+app.get('/indepthguide2', function(req, res) {
+    res.render('indepthguide2.ejs');
+});
+
+app.get('/indepthguide3', function(req, res) {
+    res.render('indepthguide3.ejs');
+});
+
+app.get('/indepthguide4', function(req, res) {
+    res.render('indepthguide4.ejs');
+});
+
+// Video page
+app.get('/video', function(req, res) {
+    res.render('video.ejs');
+});
+
+app.get('/video2', function(req, res) {
+    res.render('video2.ejs');
+});
+
+app.get('/video3', function(req, res) {
+    res.render('video3.ejs');
+});
+
+app.get('/video4', function(req, res) {
+    res.render('video4.ejs');
+});
+
+// Presentation page
+app.get('/presentation', function(req, res) {
+    res.render('presentation.ejs');
+});
+
+app.get('/presentation2', function(req, res) {
+    res.render('presentation2.ejs');
+});
+
+app.get('/presentation3', function(req, res) {
+    res.render('presentation3.ejs');
+});
+
+app.get('/presentation4', function(req, res) {
+    res.render('presentation4.ejs');
+});
+
+// Article page
+app.get('/article', function(req, res) {
+    res.render('article.ejs');
+});
+
+app.get('/article2', function(req, res) {
+    res.render('article2.ejs');
+});
+
+app.get('/article3', function(req, res) {
+    res.render('article3.ejs');
+});
+
+app.get('/article4', function(req, res) {
+    res.render('article4.ejs');
+});
+
 // ... rest of your route handlers
 
 };
