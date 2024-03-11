@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+
+
+  <meta charset="UTF-8">
+
+
+  <link rel="stylesheet" type="text/css"  href="meditation.css" />
+ 
+
+</head>
+
+
+<body>
+
+<div class="container">
+<a href="/home">  <img style="width: 49px; height: 52px; left: 20px; top: 20px; position: absolute; mix-blend-mode: darken" src="/images/image 12.png" /> </a>
+<input type="text" name="search" id="search" value="" placeholder="Search for an excercise" required>
+<div style="left: 110px; top: 200px; position: absolute; text-align: center; color: black; font-size: 32px; font-family: Inter; font-weight: 400; word-wrap: break-word">Select a catagory</div>
+<div style="left: 30px; top: 480px; position: absolute; text-align: center; color: black; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Breathing excercises</div>
+<div style="left: 250px; top: 480px; position: absolute; text-align: center; color: black; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Yoga excercises</div>
+<div style="left: 155px; top: 730px; position: absolute; text-align: center; color: black; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Zen  excercises</div>
+
+<img style="width: 150px; height: 150px; left: 80px; top: 310px; position: absolute; mix-blend-mode: darken" src="/images/image 16.png" />
+<img style="width: 150px; height: 150px; left: 240px; top: 310px; position: absolute; mix-blend-mode: darken" src="/images/image 17.png" />
+<img style="width: 150px; height: 150px; left:150px; top: 570px; position: absolute; mix-blend-mode: darken" src="/images/image 15.png" />
+<button class="button-tailor">View Tailored Content</button>
+</div>
+</body>
+</html>
