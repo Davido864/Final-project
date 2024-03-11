@@ -5,23 +5,37 @@ module.exports = function(app, forumData) {
     });
 
     // Handle login logic
-    app.post('/', function(req, res) {
-        const { username, password } = req.body;
-        const query = 'SELECT password FROM users WHERE username = ?';
+    app.post('/login', function(req, res) {
+        var username = req.body.username;
+        var password = req.body.password;
     
-        db.query(query, [username], function(err, results) {
-            if (err) {
-                console.error('Database error:', err);
-                res.redirect('/login?error=Database+error');
-            } else if (results.length > 0 && password === results[0].password) {
-                // If you have session management set up
-                req.session.loggedin = true;
-                req.session.username = username;
-                res.redirect('/home');
-            } else {
-                res.redirect('/');
-            }
-        });
+        if (username && password) {
+            var query = `SELECT * FROM users WHERE username = ?`;
+    
+            db.query(query, [username], function(error, results) {
+                if (error) {
+                    console.error('Database error:', error);
+                    return res.send('A database error occurred');
+                }
+    
+                if (results.length > 0) {
+                    // Compare hashed password
+                    bcrypt.compare(password, results[0].password, function(err, result) {
+                        if (result == true) {
+                            req.session.loggedin = true;
+                            req.session.username = username;
+                            return res.redirect('/home');
+                        } else {
+                            return res.send('Incorrect Password');
+                        }
+                    });
+                } else {
+                    return res.send('Incorrect Username');
+                }
+            });
+        } else {
+            return res.send('Please enter Username and Password!');
+        }
     });
     
     // Register page
@@ -31,15 +45,31 @@ app.get('/register', function(req, res) {
 
 // Handle registration logic
 app.post('/register', function(req, res) {
-    const { username, password, fullName, age } = req.body;
-    let sqlquery = `INSERT INTO users (username, password, fullName, age) VALUES (?, ?, ?, ?)`;
-    db.query(sqlquery, [username, password, fullName, age], function(err, result) {
-        if (err) {
-            res.render('register.ejs', { error: "Error in registration" });
-        } else {
-            res.redirect('/');
-        }
-    });
+    var username = req.body.username;
+    var password = req.body.password;
+    var fullName = req.body.fullName;
+    var age = req.body.age;
+
+    if (username && password && fullName && age) {
+        // Hash the password before inserting it into the database
+        bcrypt.hash(password, saltRounds, function(err, hash) {
+            if (err) {
+                console.error('Error hashing password:', err);
+                return res.send('Registration failed due to a server error');
+            }
+            var sqlquery = `INSERT INTO users (username, password, fullName, age) VALUES (?, ?, ?, ?)`;
+
+            db.query(sqlquery, [username, hash, fullName, age], function(err, result) {
+                if (err) {
+                    console.error('Error in registration:', err);
+                    return res.send('Registration failed due to a database error');
+                }
+                return res.redirect('/');
+            });
+        });
+    } else {
+        return res.send('Please complete all registration fields');
+    }
 });
 
 // Home page
@@ -140,11 +170,29 @@ app.get('/article4', function(req, res) {
     res.render('article4.ejs');
 });
 
-// support page
+// Support page
 app.get('/support', function(req, res) {
     res.render('support.ejs');
 });
 
-// ... rest of your route handlers
+// Disscussion page
+app.get('/disscussion', function(req, res) {
+    res.render('disscussion.ejs');
+});
 
+// View community forum page
+app.get('/community', function(req, res) {
+    res.render('community.ejs');
+});
+
+// Meditation excercises page
+app.get('/meditation', function(req, res) {
+    res.render('meditation.ejs');
+});
+
+// Relaxation page
+app.get('/relaxation', function(req, res) {
+    res.render('relaxation.ejs');
+});
+// ... rest of your route handlers
 };
