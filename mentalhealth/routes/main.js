@@ -194,5 +194,15 @@ app.get('/meditation', function(req, res) {
 app.get('/relaxation', function(req, res) {
     res.render('relaxation.ejs');
 });
+
+// forgot password page
+app.get('/forgot', function(req, res) {
+    res.render('forgot.ejs');
+});
+
+// new password page
+app.get('/newpass', function(req, res) {
+    res.render('newpass.ejs');
+});
 // ... rest of your route handlers
 };
