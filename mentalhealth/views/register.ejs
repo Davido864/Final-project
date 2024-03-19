@@ -1,3 +1,5 @@
+<!-- This EJS template is designed for the registration page of the application.-->
+
 <!-- It dynamically displays the forum name in the title and heading, and offers a form for new users 
 to register their details, including full name, username, password, and age. --> 
 
@@ -17,9 +19,7 @@ arrow, enhancing user experience and accessibility.-->
 
   <meta charset="UTF-8">
 
-  <title><%= forumName %> - Register</title>
-
-  <link rel="stylesheet" type="text/css"  href="register.css" />
+    <link rel="stylesheet" type="text/css"  href="register.css" />
 
 </head>
 
@@ -27,11 +27,9 @@ arrow, enhancing user experience and accessibility.-->
 
   <div class="container">
 
-    <a href="login.ejs" class="back-button">←</a>
-
     <h1><%= forumName %></h1>
 
-      <form action="/register" method="post">
+      <form action="/home" method="get">
 
       <input type="text" name="fullName" id="fullName" value="" placeholder="Enter Full name" required>
 
