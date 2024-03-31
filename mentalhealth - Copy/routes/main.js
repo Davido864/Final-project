@@ -1,75 +1,14 @@
-module.exports = function(app, forumData) {
-    // Login page
-    app.get('/', function(req, res) {
-        res.render('login.ejs', forumData);
-    });
+// The javascript code allows for my ejs page to be initialized onto my website.
 
-    // Handle login logic
-    app.post('/login', function(req, res) {
-        var username = req.body.username;
-        var password = req.body.password;
+module.exports = function(app, forumData) {
+// Login page
+app.get('/', function(req, res) {
+    res.render('login.ejs', forumData);
+});
     
-        if (username && password) {
-            var query = `SELECT * FROM users WHERE username = ?`;
-    
-            db.query(query, [username], function(error, results) {
-                if (error) {
-                    console.error('Database error:', error);
-                    return res.send('A database error occurred');
-                }
-    
-                if (results.length > 0) {
-                    // Compare hashed password
-                    bcrypt.compare(password, results[0].password, function(err, result) {
-                        if (result == true) {
-                            req.session.loggedin = true;
-                            req.session.username = username;
-                            return res.redirect('/home');
-                        } else {
-                            return res.send('Incorrect Password');
-                        }
-                    });
-                } else {
-                    return res.send('Incorrect Username');
-                }
-            });
-        } else {
-            return res.send('Please enter Username and Password!');
-        }
-    });
-    
-    // Register page
+// Register page
 app.get('/register', function(req, res) {
     res.render('register.ejs', forumData);
-});
-
-// Handle registration logic
-app.post('/register', function(req, res) {
-    var username = req.body.username;
-    var password = req.body.password;
-    var fullName = req.body.fullName;
-    var age = req.body.age;
-
-    if (username && password && fullName && age) {
-        // Hash the password before inserting it into the database
-        bcrypt.hash(password, saltRounds, function(err, hash) {
-            if (err) {
-                console.error('Error hashing password:', err);
-                return res.send('Registration failed due to a server error');
-            }
-            var sqlquery = `INSERT INTO users (username, password, fullName, age) VALUES (?, ?, ?, ?)`;
-
-            db.query(sqlquery, [username, hash, fullName, age], function(err, result) {
-                if (err) {
-                    console.error('Error in registration:', err);
-                    return res.send('Registration failed due to a database error');
-                }
-                return res.redirect('/');
-            });
-        });
-    } else {
-        return res.send('Please complete all registration fields');
-    }
 });
 
 app.get('/registersuccess', function(req, res) {
@@ -84,6 +23,10 @@ app.get('/home', function(req, res) {
 // About you page
 app.get('/aboutyou', function(req, res) {
     res.render('aboutyou.ejs');
+});
+
+app.get('/aboutyousuccess', function(req, res) {
+    res.render('aboutyousuccess.ejs');
 });
 
 // Quiz page
@@ -179,9 +122,17 @@ app.get('/support', function(req, res) {
     res.render('support.ejs');
 });
 
+app.get('/supportsuccess', function(req, res) {
+    res.render('supportsuccess.ejs');
+});
+
 // Disscussion page
 app.get('/disscussion', function(req, res) {
     res.render('disscussion.ejs');
+});
+
+app.get('/disscussionsuccess', function(req, res) {
+    res.render('disscussionsuccess.ejs');
 });
 
 // View community forum page
@@ -210,19 +161,6 @@ app.get('/newpass', function(req, res) {
 
 app.get('/newpasssuccess', function(req, res) {
     res.render('newpasssuccess.ejs');
-});
-
-// success pages
-app.get('/aboutyousuccess', function(req, res) {
-    res.render('aboutyousuccess.ejs');
-});
-
-app.get('/disscussionsuccess', function(req, res) {
-    res.render('disscussionsuccess.ejs');
-});
-
-app.get('/supportsuccess', function(req, res) {
-    res.render('supportsuccess.ejs');
 });
 
 // upcoming features page
@@ -291,8 +229,5 @@ app.get('/bullyingflashcard', function(req, res) {
     res.render('bullyingflashcard.ejs');
 });
 
-
-
 // ... rest of your route handlers
 };
-
