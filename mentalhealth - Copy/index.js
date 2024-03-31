@@ -1,8 +1,6 @@
-// My Forum
+// This javascript code initalizes my modules allowing my website to function as intended.
 
-// A web application to provide discussion forums
-
-// Import the modules we need
+// Import the modules we need using npm install ().
 
 var express = require ('express')
 
@@ -17,7 +15,6 @@ const session = require('express-session');
 const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
-
 
 // Create the express application object
 
@@ -93,8 +90,6 @@ app.use(session({
     }
 }));
 
-
-// Start the web app listening
+// Start the web app listening when using node index.js
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
