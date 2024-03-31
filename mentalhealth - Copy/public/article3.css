@@ -1,0 +1,138 @@
+body, html {
+
+    height: 100%;
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(to bottom, #F26767, #046DB8);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+  }
+
+  
+
+  .container {
+
+    width: 390px;
+
+    height: 850px;
+
+    padding: 20px;
+
+    background: linear-gradient(to bottom, #F26767, #046DB8);
+
+    border-radius: 5px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    position: relative;
+
+  }
+
+.container p
+
+{
+
+left: 10px;
+
+top: 110px;
+
+position: absolute;
+
+text-align: center;
+
+color: black;
+
+font-size: 24px;
+
+font-family: Inter;
+
+font-weight: 400;
+
+word-wrap: break-word;
+}
+
+.url-tailor 
+{
+left: 10px;
+
+top: 540px;
+
+position: absolute;
+
+font-size: 20px;
+
+font-weight: 200;
+}
+
+.url-tailoring
+{
+left: 10px;
+
+top: 570px;
+
+position: absolute;
+
+font-size: 20px;
+
+font-weight: 200;
+}
+
+.url-tailored
+{
+left: 10px;
+
+top: 600px;
+
+position: absolute;
+
+font-size: 20px;
+
+font-weight: 200;
+}
+
+.presentation-tailor
+{
+left: 10px;
+
+top: 630px;
+
+position: absolute;
+
+font-size: 20px;
+
+font-weight: 200;
+}
+
+.presentation-tailored 
+{
+left: 10px;
+
+top: 660px;
+
+position: absolute;
+
+font-size: 20px;
+
+font-weight: 200;
+}
+
+.presentation-tailoring 
+{
+left: 10px;
+
+top: 690px;
+
+position: absolute;
+
+font-size: 20px;
+
+font-weight: 200;
+}
