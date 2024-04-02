@@ -1,0 +1,139 @@
+body, html {
+
+    height: 100%;
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(to bottom, #F26767, #046DB8);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.container {
+
+    width: 390px;
+
+    height: 850px;
+
+    padding: 20px;
+
+    background: linear-gradient(to bottom, #F26767, #046DB8);
+
+    border-radius: 5px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    position: relative;
+
+}
+
+  input[type="text"] {
+
+    position: absolute;
+
+    left: 40px;
+
+    top: 100px;
+
+    width: 350px;
+
+    height: 40px;
+
+    padding: 10px;
+
+    margin: 10px 0;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    box-sizing: border-box;
+  
+}
+  
+.quiz-tailor {
+
+  position: absolute;
+
+  text-align: center;
+
+  left: 40px;
+
+  top: 410px;
+
+  width: 350px;
+
+  height: 100px;
+
+  padding: 10px;
+
+  margin: 10px 0;
+
+  border: 1px solid #ddd;
+
+  background-color: white;
+
+  border-radius: 5px;
+
+  box-sizing: border-box;
+
+}
+
+.flashcard-tailor {
+
+  position: absolute;
+
+  left: 40px;
+
+  top: 560px;
+
+  width: 350px;
+
+  height: 100px;
+
+  padding: 10px;
+
+  margin: 10px 0;
+
+  border: 1px solid #ddd;
+
+  border-radius: 5px;
+
+  background-color: white;
+
+  box-sizing: border-box;
+
+}
+
+.statistic-tailor {
+
+  position: absolute;
+
+  left: 40px;
+
+  top: 710px;
+
+  width: 350px;
+
+  height: 100px;
+
+  padding: 10px;
+
+  margin: 10px 0;
+
+  border: 1px solid #ddd;
+
+  border-radius: 5px;
+
+  background-color: white;
+
+  box-sizing: border-box;
+  
+}
